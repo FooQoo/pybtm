@@ -13,11 +13,10 @@ if __name__ == "__main__":
     num_topic = int(sys.argv[4])
     minibatch_size = int(sys.argv[5])
     iteration = int(sys.argv[6])
-    
+
     pybtm = Pybtm(path_to_b2w=b2w_dir, path_to_i2w=i2w_dir)
     pybtm.fit(biterms_dir, num_topic=num_topic, minibatch_size=minibatch_size, iteration=iteration)
-    pybtm.get_topics()
+    topics = pybtm.get_topics()
 
-    for topic in sorted(pybtm.topics.items(), key=lambda x: -x[1][0]):
+    for topic in sorted(topics.items(), key=lambda x: -x[1][0]):
         print(topic[1][0], topic[1][1][:5], '\n')
-

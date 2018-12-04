@@ -10,7 +10,6 @@ class Pybtm(object):
         self.biterm_length = None
         self.phi = None
         self.theta = None
-        self.topics = None
         self.num_topic = None
         self.alpha = None
         self.beta = None
@@ -126,7 +125,7 @@ class Pybtm(object):
     def get_topics(self):
         indices = list(set(chain.from_iterable(np.argpartition(-self.phi, 8, axis=1)[:, :8].tolist())))
 
-        self.topics = {}
+        topics = {}
 
         for k in range(self.theta.shape[0]):
             phi_dic = []
@@ -134,4 +133,6 @@ class Pybtm(object):
             for idx in indices:
                 phi_dic.append((self.i2w[idx], float(np.around(self.phi[k, idx], 3))))
 
-            self.topics[k] = ((float(np.around(self.theta[k], 3)), sorted(phi_dic, key=lambda x: -x[1])))
+            topics[k] = ((float(np.around(self.theta[k], 3)), sorted(phi_dic, key=lambda x: -x[1])))
+
+        return topics

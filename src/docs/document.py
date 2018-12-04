@@ -25,7 +25,7 @@ class Document(object):
             for w2i in sorted(self.w2i.items(), key=lambda w2i: w2i[1]):
                 f.write('{}\n'.format(w2i[0]))
 
-        with open(path + '/w2b.txt', 'w', encoding="utf-8") as f:
+        with open(path + '/b2w.txt', 'w', encoding="utf-8") as f:
             for w2b in sorted(self.w2b.items(), key=lambda w2b: w2b[1]):
                 f.write('{0},{1}\n'.format(w2b[0][0], w2b[0][1]))
 

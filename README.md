@@ -12,6 +12,7 @@ sh run.sh
 
 ## Requirement
 - numpy
+- scipy
 
 ## Reference
 - [Stochastic collapsed variational bayesian inference for biterm

@@ -69,14 +69,15 @@ class Pybtm(object):
 
         b_index = list(self.biterms.keys())
 
+        t = 0
         for i in range(self.iteration):
-            for j, minibatch in enumerate(self.__resamling(b_index, self.minibatch_size)):
-
+            for minibatch in self.__resamling(b_index, self.minibatch_size):
+                t += 1
                 biterm_freq = np.array([self.biterms[b] for b in minibatch])
                 minibatchsize = biterm_freq.sum()
 
-                self.rho *= (1-self.__nu(i*j+j))
-                weight = (self.__nu(i*j+j)*self.biterm_length) / (minibatchsize*self.rho)
+                self.rho *= (1-self.__nu(t))
+                weight = (self.__nu(t)*self.biterm_length) / (minibatchsize*self.rho)
 
                 tmp = (self.rho*nk + self.alpha) / ((2*self.rho*nk + beta_sum)*(2*self.rho*nk + beta_sum + 1))
 

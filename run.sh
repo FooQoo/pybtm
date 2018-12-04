@@ -7,7 +7,7 @@ b2w_dir=./output/b2w.txt
 i2w_dir=./output/i2w.txt
 biterms_dir=./output/biterms.txt
 num_topic=10
-minibatchsize=10
+minibatchsize=200
 iteration=100
 
 echo "================= Index Docs ==============="

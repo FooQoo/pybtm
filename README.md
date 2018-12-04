@@ -10,6 +10,9 @@
 sh run.sh
 ```
 
+## Requirement
+- numpy
+
 ## Reference
 - [Stochastic collapsed variational bayesian inference for biterm
 topic model](https://ieeexplore.ieee.org/document/7727629)

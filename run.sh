@@ -1,13 +1,13 @@
 # run an toy example for BTM
 mkdir -p ./output
-input_dir=sample-data/yahoonews.txt
+input_dir=sample-data/tweets.txt
 output_dir=./output/
 
 b2w_dir=./output/b2w.txt
 i2w_dir=./output/i2w.txt
 biterms_dir=./output/biterms.txt
-num_topic=10
-minibatchsize=200
+num_topic=20
+minibatchsize=10
 iteration=100
 
 echo "================= Index Docs ==============="

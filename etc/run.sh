@@ -1,6 +1,7 @@
 # run an toy example for BTM
+
 mkdir -p ./output
-input_dir=sample-data/tweets.txt
+input_dir=sample-data/processed.txt
 output_dir=./output/
 
 b2w_dir=./output/b2w.txt
@@ -11,8 +12,8 @@ minibatchsize=10
 iteration=100
 
 echo "================= Index Docs ==============="
-python indexDocs.py $input_dir $output_dir
+python src/index_docs.py $input_dir $output_dir
 wc -l ./output/*
 
 echo "=============== Topic Learning ============="
-python train.py $b2w_dir $i2w_dir $biterms_dir $num_topic $minibatchsize $iteration
+python src/train.py $b2w_dir $i2w_dir $biterms_dir $num_topic $minibatchsize $iteration

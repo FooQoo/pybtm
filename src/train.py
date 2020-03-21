@@ -1,5 +1,5 @@
 import sys, os
-from src.model.pybtm import Pybtm
+from model.pybtm import Pybtm
 
 if __name__ == "__main__":
 

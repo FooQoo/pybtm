@@ -1,5 +1,5 @@
 import sys, os
-from src.docs.document import Document
+from docs.document import Document
 
 if __name__ == "__main__":
 

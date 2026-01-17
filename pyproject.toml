@@ -1,20 +1,20 @@
-[tool.poetry]
+[project]
 name = "pybtm"
 version = "1.0.0"
 description = ""
-authors = ["FooQoo"]
-license = "MIT"
+authors = [
+    {name = "FooQoo"}
+]
+license = {text = "MIT"}
 readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "janome",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-numpy = "*"
-scipy = "*"
-pandas = "*"
-janome = "*"
-
-
-[tool.poetry.dev-dependencies]
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"

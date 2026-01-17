@@ -12,8 +12,8 @@ minibatchsize=10
 iteration=100
 
 echo "================= Index Docs ==============="
-python src/index_docs.py $input_dir $output_dir
+uv run python pybtm/index_docs.py $input_dir $output_dir
 wc -l ./output/*
 
 echo "=============== Topic Learning ============="
-python src/train.py $b2w_dir $i2w_dir $biterms_dir $num_topic $minibatchsize $iteration
+uv run python pybtm/train.py $b2w_dir $i2w_dir $biterms_dir $num_topic $minibatchsize $iteration
